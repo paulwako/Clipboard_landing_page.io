@@ -1,0 +1,93 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+
+.articles {
+    margin-bottom: 9.3rem;
+
+    @include mobile-styles {
+        margin-bottom: 10.5rem;
+    }
+
+    .articles__inner {
+        @extend %wrap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.articles__title-box {
+    margin-bottom: 4.5rem;
+
+    @include mobile-styles {
+        margin-bottom: 5.5rem;
+    }
+}
+
+.articles__list-container {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10.2rem;
+
+    @include mobile-styles {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 8.3rem;
+    }
+
+    .articles__list-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-basis: 33.33%;
+
+        @include mobile-styles {
+            flex-basis: 100%;
+        }
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+
+            @include mobile-styles {
+                margin-right: 0;
+                margin-bottom: 3.3rem;
+            }
+        }
+
+        img {
+            margin-bottom: 2.5rem;
+        }
+
+        h3 {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.articles__logos-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -5.967rem;
+    margin-bottom: -3.563rem;
+    flex-wrap: wrap;
+
+    @include mobile-styles {
+        margin-bottom: -4rem;
+    }
+
+    .articles__logo-box {
+        flex-shrink: 0;
+    }
+
+    .articles__logo-box__inner {
+        margin-right: 5.967rem;
+        margin-bottom: 3.563rem;
+
+        @include mobile-styles {
+            margin-bottom: 4rem;
+        }
+    }
+}
