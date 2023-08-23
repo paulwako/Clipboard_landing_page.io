@@ -1,0 +1,86 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.hero {
+    background-image: url('../images/bg-header-desktop.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    padding-top: 8rem;
+    margin-bottom: 9rem;
+
+    @include mobile-styles {
+        margin-bottom: 9.5rem;
+        background-image: url('../images/bg-header-mobile.png');
+    }
+
+    .hero__inner {
+        @extend %wrap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.hero__logo {
+    margin-bottom: 3.125rem;
+}
+
+.hero__text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+
+
+    @include mobile-styles {
+        width: 100%;
+    }
+
+    h1 {
+        margin-bottom: 0.75rem;
+
+        @include mobile-styles {
+            width: 95%;
+        }
+    }
+
+    .header__text {
+        font-size: $font-size-base-large;
+        line-height: 30px;
+        width: 80%;
+        margin-bottom: 3rem;
+
+        @include mobile-styles {
+            font-size: $font-size-base;
+            line-height: 26px;
+            width: 100%;
+        }
+    }
+
+    .header__buttons {
+        display: flex;
+        align-items: center;
+
+        @include mobile-styles {
+            flex-direction: column;
+            min-width: 100%;
+        }
+
+        .btn {
+            @include mobile-styles {
+                min-width: 100%
+            }
+
+            &:not(:last-child) {
+                margin-right: 1rem;
+
+                @include mobile-styles {
+                    margin-right: 0rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+}
